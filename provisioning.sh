@@ -24,3 +24,6 @@ conda clean -yt
 # Install Python packages
 conda install --yes 'ipython=4.0*' 'ipywidgets=4.0*' 'pandas=0.16*' 'matplotlib=1.4*' 'scipy=0.15*' 'seaborn=0.6*' 'scikit-learn=0.16*' pyzmq
 conda clean -yt
+
+# Install ipython sql
+sudo pip install ipython-sql
