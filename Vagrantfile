@@ -15,9 +15,11 @@ Vagrant.configure(2) do |config|
   config.vm.box = "data-science-toolbox/dst"
   config.vm.network "forwarded_port", guest: 8888, host: 8888
 
-  config.vm.provision "shell", inline: <<-SHELL
-    sudo pip install jupyter
-  SHELL
+  ##config.vm.provision "shell", path: "Miniconda3-3.9.1-Linux-x86_64.sh"
+  config.vm.provision "file", source: "./Miniconda3-3.9.1-Linux-x86_64.sh", destination: "Miniconda3-3.9.1-Linux-x86_64.sh"
+  config.vm.provision "shell", path: "provisioning.sh"
+
+
 
   # config.vm.provision "shell", run: "always", inline: <<-SHELL
   #   ipython notebook --notebook-dir=/vagrant/notebook --no-browser --ip=0.0.0.0 &
