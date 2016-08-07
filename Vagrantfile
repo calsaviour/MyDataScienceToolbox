@@ -19,6 +19,9 @@ Vagrant.configure(2) do |config|
     sudo pip install jupyter
   SHELL
 
+  # config.vm.provision "shell", run: "always", inline: <<-SHELL
+  #   ipython notebook --notebook-dir=/vagrant/notebook --no-browser --ip=0.0.0.0 &
+  # SHELL
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
